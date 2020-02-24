@@ -6,6 +6,15 @@ This is very simple TODO list.
 I'm going to assume a certain amount of HTML and Javascript knowledge in my audience.  If you don't, it might
 be a little hard to follow.
 
+## Get Started
+
+Check out this repo
+```
+>$ npm install
+>$ npx es-dev-server --watch --node-resolve --app-index src/web/index.html
+```
+Click on the link in the terminal and start editing / viewing code without building anything.
+
 ## Introduction
 
 When I first started writing web applications in the late '90s it generally involved running a local
