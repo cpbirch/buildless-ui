@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style/index.css" rel="stylesheet" />
+    <title>Buildless UI</title>
+</head>
+<body>
+<div class="page">
+    <header>
+        <h1 id="product-title">Buildless UI <sup>BETA</sup></h1>
+        <section id="settings">
+            <span>ThoughtWorks</span>
+        </section>
+    </header>
+    <main>
+        <h1>Monday Knowledge Sharing</h1>
+        <list-creator>
+            <h2 slot="title">Dynamic List Creator</h2>
+            <remind-me-to slot="list-item-generator"></remind-me-to>
+            <reminder-list slot="reminder-list"></reminder-list>
+            <input type="text" />
+        </list-creator>
+    </main>
+</div>
+<script src="./demo/list-creator.js" type="module"></script>
+<script src="./demo/remind-me-to.js" type="module"></script>
+<script src="./demo/reminder-list.js" type="module"></script>
+</body>
+</html>

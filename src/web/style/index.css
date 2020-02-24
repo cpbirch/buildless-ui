@@ -1,0 +1,77 @@
+@import 'normalize.css';
+
+html {
+    overflow-y: scroll;
+}
+
+html,
+body {
+  width: 100%;
+  background-color: #f8f8f8; /* wb2-color-smoke */
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 14px;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: 60px auto;
+}
+
+header {
+  width: 100%;
+  background-color: #000000; /* wb2-color-black */
+  font-family: "Gill Sans", sans-serif;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(60px, auto);
+  grid-template-areas: 'left-col middle-col right-col';
+  align-items: center;
+}
+
+main {
+  width: 70%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#product-title {
+  min-width: 190px;
+  padding-left: 25px;
+  font-weight: normal;
+  font-size: 31px;
+  grid-area: left-col;
+  text-align: center;
+}
+
+#product-title sup {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 14px;
+  top: -9px;
+}
+
+#settings {
+  grid-area: right-col;
+  text-align: center;
+}
+
+#settings > img {
+  margin-right: 5px;
+}
+
+#settings > span {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
+  display: inline-block;
+}
+
+#order-search {
+  display: grid;
+  grid-auto-rows: auto;
+  background-color: white;
+  box-shadow: 10px 10px 30px #e5e5e5; /* wb2-color-asphalt */
+  padding: 3% 10%;
+}
