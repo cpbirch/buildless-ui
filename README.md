@@ -1,19 +1,17 @@
 # buildless-ui
 Some examples of the fast evolving web components standards: Shadow DOM, HTML Templates, ES Modules.
 
-This is very simple TODO list.
-
-I'm going to assume a certain amount of HTML and Javascript knowledge in my audience.  If you don't, it might
-be a little hard to follow.
+The first example is very simple TODO list.
 
 ## Get Started
 
-Check out this repo
+Check out this repo and then...
 ```
 >$ npm install
 >$ npx es-dev-server --watch --node-resolve --app-index src/web/index.html
 ```
 Click on the link in the terminal and start editing / viewing code without building anything.
+Or try [Open the Builderless UI TODO App](http://localhost:8000/src/web/)
 
 ## Introduction
 
@@ -21,19 +19,12 @@ When I first started writing web applications in the late '90s it generally invo
 webserver, editing a file using Vi and then viewing the result in a browser called Netscape.
 There was no complex build process and the feedback loop was very quick.
 
-In my TW career, I've avoided Javascript, my pairs have generally carried me because often I'm baffled.
-The chain of execution seems magic (Redux Sagas?).  My criticism of React apps comes
-from my poor experience of working in UIs with 200,000+ lines of code, often shared across teams.
-
 ## What's changed?
 
 Apple shipped a new version of Apple Music, using web components and leveraging the Shadow DOM 
-and Custom Elements.  In my team, James Emmott brought this story to my attention:
-[Apple just shipped web components](https://dev.to/ionic/apple-just-shipped-web-components-to-production-and-you-probably-missed-it-57pf)
-James also built a relationship with Scott Davis (not to be confused with Scott Davies) 
-who is out TW Studios and evangelising about web components all 
-over the world.  Scott has been pointing us in the right direction and answered our requests
-for help.
+and Custom Elements. [Apple just shipped web components](https://dev.to/ionic/apple-just-shipped-web-components-to-production-and-you-probably-missed-it-57pf)
+My colleague Scott Davis has also been evangelising about Web Components for years, one of his
+recent talks was [It's time for Web Components](https://www.youtube.com/watch?v=oF3xErSS-x8)
 
 Modern browsers now have great support for the Shadow DOM, ES Modules and HTML Templates.  The
 specs and implementations have actually been around for quite a long time (started in 2012 at Google)
@@ -41,6 +32,17 @@ and are quite mature.  Other parts are still a little immature, HTML authoring a
 they are rapidly improving.
 
 [Open-WC.org](https://open-wc.org/about/) provide a curated set of tools to fill in the gaps.
+
+## Why not keep using React?
+
+React and the toolset around it is very mature but React was created to solve a specific problem: at the time of
+it's inception, different browser vendors had very different DOM implementations requiring developers to perform
+all kinds of wonderful tricks to make the web applications function correctly.  The React Virtual DOM was a 
+guarantee that updates to the Virtual DOM will be rendered as intended in any of the supported browsers.
+
+The current browser implementations are now so similar this problem no longer needs solving.  In fact React now
+actively works against the browser specifications by providing a single global scoped virtual DOM instead of many
+composable shadow DOMs providing better encapsulation, high cohesion and loose coupling between components.
 
 ## Current issues in User Interface Development
 
@@ -54,6 +56,8 @@ Testing seems like magic.  Dependency injection seems like magic.  There's a who
 ## Aims of this repository
 
 Provide a step by step approach to building a complex web app, without a build process.
+
+After implementing each change, take a look at the browser and see the immediate update.
 
 # Building the TODO App
 
@@ -285,17 +289,17 @@ It's a little complex but the parent <list-creator> handles it as follows:
 
 # Summary
 
-You've seen me making changes and instantly going back to the browser and those changes being
-reflected.  To manage Node dependencies, es-dev-server provided by Open-WC manages the resolution
+Changes to html and javascript files are instantly visible by reloading the browser page.  
+To manage Node dependencies, es-dev-server provided by Open-WC manages the resolution
 of Node libraries.
 
-You've seen nice encapsulation with ES Modules, when HTML modules and CSS modules the encapsulation
-journey will be more complete and feel like the UI can be developed like our server side code.
+The encapsulation with ES Modules feels like real programming; when HTML modules and CSS modules arrive the encapsulation
+journey will be more complete and UI development will feel like our server side sibling.
 
-I hope I've managed to intrigue you all into taking a look at what the browsers have to offer.
-It's a little different than existing frameworks but these are the open standards, being adopted
-by everyone.  There is an increasing amount of tutorials and help on these topics.
-So if you're building applications for the future, I'd recommend starting here.
+I hope you're intrigued to look at what modern browsers have to offer.
+They're a little different from existing frameworks like Angular or React but these are the open standards, 
+being adopted by everyone.  There is an increasing amount of tutorials and help on these topics.
+If you're building applications for the future, I'd recommend starting with [Open-WC](https://open-wc.org).
 
 ## A couple of final notes
 
@@ -306,5 +310,5 @@ problem.  I encourage you all to raise issues on libraries which don't offer mod
 
 Testing
 It's essential to test the apps in a browser, so a setup of Karma, Chrome-headless with
-Mocha has proven reliable.  On my current project, we are TDDing our components.
+Mocha has proven reliable.
 
